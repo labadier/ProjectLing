@@ -38,8 +38,7 @@
 		\label{HMM_task1}
 	\end{figure}
 	
-	Como se puede apreciar el desempeño del modelo es mejor para el dataset de la tarea reducida gracias a que la cantidad de estados ocultos del modelo es menor por tanto la posibilidad de escoger una transición errada disminuye, esta observación se puede realizar incluyendo además los intervalos de un  un 95\% de confianza estimados. Nótese ademas que en ambos modelos la $i-esima$ partición es exactamente la misma, i.e., el mismo conjunto de elementos ordenados en ambos modelos.
-	
+	Como se puede apreciar el desempeño del modelo es mejor para el dataset de la tarea reducida gracias a que la cantidad de estados ocultos del modelo es menor por tanto la posibilidad de escoger una transición errada disminuye, esta observación se puede realizar incluyendo además los intervalos de un  un 95\% de confianza. Nótese ademas que en ambos modelos la $i-esima$ partición es exactamente la misma, i.e., el mismo conjunto de elementos ordenados en ambos modelos. En el \tablename~\ref{HMM_task1_table} se muestran de manera detallada los resultados para cada variante.
 		\begin{table}[thb!]
 		\begin{center} 		
 			\begin{tabular}{cc} 
@@ -60,60 +59,51 @@
 				\hline
 			\end{tabular}
 			\caption{Perplejidad sobre modelos de 3-gramas y 4-gramas}	
-			\label{kk}
+			\label{HMM_task1_table}
 		\end{center}
 	\end{table}		 	
-	
+	\\\\\\\\\\\\\\\\
 
 	
-	En la curva anterior se muestran los resultados para modelos de 1-gramas hasta 4-gramas sobre el test set, como es intuitivo modelos con construcciones más simples de elementos atómicos (gramas) tienden a presentar una distribución más suavizada y uniforme entre los elementos del vocabulario con respecto a construcciones más complejas (4-gramas y 5-gramas). De los modelos explorados el más robusto  resulto el de 4-gramas, con una preplejidad de $\sim$ 7.22.
-	
-		\section*{Tarea II}
-		
-		\noindent De los resultados anteriores, resulta congruente pensar que empleando modelos de 3-gramas o 4-gramas podrían arrojar los mejores resultados, explorando distintos métodos de descuento como se muestra en la \figurename~\ref{k} curva. 
-	
-		\begin{figure}[!thb]
-			\begin{center}
-				\includegraphics[width=280pt]{images/t2.png}
-			\end{center}
-			\caption{Resultados de Perplejidad sobre Dihana test set para modelos de 1-gramas a 4-gramas y distintos métodos de descuento .}
-			\label{k}
-		\end{figure}
-		
-	Nuevamente, para todos los casos los mejores resultados se obtienen para los modelos más complejos de 4-gramas, sin embargo el método no modificado de Kneser-Ney mejora los valores de perplejidad con respecto a las otras variantes de descuento hasta el valor de ~7.04 en 4-gramas y 7.65 para 3-gramas.
-	
-	\section*{Tarea III}
-	
-	\noindent Al sustituir el suavizado mediante back-off por un esquema de interpolación sobre los descuentos  de Witten-Bell y Kneser-Ney modificado, los resultados obtenidos en términos de perplejidad se muestran en el \tablename~\ref{kk}
-	
-	\begin{table}[thb!]
-	\begin{center} 		
-		\begin{tabular}{lcc|cc} 
-			\hline	\multirow{2}{*}{Descuento}&\multicolumn{2}{c}{3-gram}&\multicolumn{2}{c}{4-gram}\\
-			\cline{2-5}
-			&\textit{Back-off}&\textit{Interpol.}&\textit{Back-off}&\textit{Interpol.}\\
-			\hline
-			Witten-Bell&7.83&\textbf{7.36}&7.15&\textbf{6.58}\\
-			Kneser-Ney&8.32&\textbf{7.70}&7.96&\textbf{7.02}\\
-			\hline
-		\end{tabular}
-		\caption{Perplejidad sobre modelos de 3-gramas y 4-gramas}	
-		\label{kk}
-	\end{center}
-\end{table}		 	
-	\noindent Donde como se puede observar en cada caso los valores son mejorados tanto para los modelos de 3-gramas como para 4-gramas, donde se obtienen los mejores resultados.
-	
-	\section*{Tarea IV}
-	
-	\noindent Para estudiar como impacta el uso de conjuntos léxicos con distintas cargas semánticas, se analiza el desempeño de modelos de 3-gramas y 4-gramas bajo las mismas condiciones de la tarea I, i.e., descuento de Good-Turing y suavizado de back-off empleando el conjunto de datos Europarl. Este estudio consiste simplemente en remover del vocabulario términos de forma escalonada que aparecen 1, 5 o menos y 9 o menos veces. 
+	Teniendo en cuenta que la medida de accuracy nos da un valor suavizado del desempeño global de todas las etiquetas, analizamos la media de Macro-F1 para cada partición como se muestra en la \figurename~\ref{macro-f1-hmm}.
 	
 	\begin{figure}[!thb]
 		\begin{center}
-			\includegraphics[width=300pt]{images/t4.png}
+			\includegraphics[scale=0.6]{images/macro-f1-hmm.png}
 		\end{center}
-		\caption{Resultados de Perplejidad sobre reducciones de vocabulario para dataset Europal en modelos de 3-gramas y 4-gramas.}
+		\caption{Macro-F1 Hidden Markov Model sobre cess-esp y cess-esp reducido}
+		\label{macro-f1-hmm}
 	\end{figure}
 
-	\noindent Como se puede observar, modelos de 4-gramas poseen un mejor comportamiento en todas las variaciones. Para el valor de 0 (no eliminando palabra alguna del vocabulario) se obtienen los resultados más altos de perplejidad lo cual es coherente con el hecho de que elementos más uniformemente distribuidos poseen menor entropía y por tanto perplejidad. Esta condición de uniformidad se aproximará mientras nos acercamos al valor del 9 ya que se eliminan términos extremos. Por otro lado, términos menos frecuentes dentro de un corpus son en gran parte aquellos que caracterizan el lenguaje de manera específica y por tanto lo complejizan de ahí gran parte de este decrecimiento.
+	De aquí podemos concluir que evidentemente hay etiquetas que están siendo muy mal predichas por el modelo, sobretodo para la tarea ampliada, lo que puede estar relacionado con una subrepresentación de estos fenómenos en el training-set. Teniendo en cuenta esto, resulta más coherente asumir un etiquetado más global y suavizado que permita tener para cada categoría más ejemplos de entrenamiento como el propuesto en la tarea reducida. En lo adelante emplearemos el conjunto de datos reducidos para evaluar los modelos.
 	
+	\section*{Tarea II}
+	
+	Luego de barajar el dataset para la tarea reducida y tomar los últimos $\Big\lceil \frac{|\mathcal{D}|}{10}\Big\rceil$ elementos para validar nuestro modelo, se observa una relación directamente proporcional con el acuraccy y la cantidad de datos empleados para entrenamiento como se muestra en la \figurename~\ref{incremental-set}.
+		
+		
+		\begin{figure}[!thb]
+			\begin{center}
+				\includegraphics[scale=0.6]{images/incremental-set.png}
+			\end{center}
+			\caption{ Accuracy Hidden Markov Model sobre cess-esp reducido y con incremento progresivo del conjunto de entrenamiento}
+			\label{incremental-set}
+		\end{figure}
+	Efectivamente alcanzando el mejor desempeño para el conjunto de entrenamiento completo. Al igual que en la tarea anterior cuando empleamos el dataset ampliado y algunas etiquetas resultaban subrepresentadas, es posible concluir que en este caso sucede lo mismo para subconjuntos pequeños del dataset. Por otro lado dentro de un modelo estadístico como lo es el HMM, el número de observaciones de un suceso esta directamente relacionado con cuan preciso es el valor de probabilidad de ocurrencia calculado para este.
+	
+	\section*{Tarea III}
+	
+	Para incorporar al Tnt el método de suavizado para palabras desconocidas mediante el uso de sufijos, primero estudiamos el comportamiento del método Affix Tagger  con varias longitudes de sufijos en el rango de 1 a 9 caracteres, en la ~\figurename~\ref{affix} se muestra el valor medio del accuracy para este método en un cross-validation que involucra el mismo conjunto de datos ordenados en cada fold para cada variante de sufijo.
+	
+	\begin{figure}[!thb]
+		\begin{center}
+			\includegraphics[scale=0.6]{images/affix.png}
+		\end{center}
+		\caption{ Accuracy Medio del método Affix Tagger sobre cross-validation en cess-esp reducido.}
+		\label{affix}
+	\end{figure}
+
+	del anterior experimento, tomamos como longitud de sufijos para estudiar el suavizado en el Tnt $l=3$.
+
+
 \end{document}
