@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.27)  24 OCT 2022 14:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.7.27)  25 OCT 2022 16:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -507,6 +507,10 @@ File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
 (./document.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
+
+
+LaTeX Warning: Label `table-task4' multiply defined.
+
 )
 \openout1 = `document.aux'.
 
@@ -605,6 +609,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/opt/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
 <images/HMM_task1.png, id=11, 722.7pt x 361.35pt>
 File: images/HMM_task1.png Graphic file (type png)
 <use images/HMM_task1.png>
@@ -672,38 +680,81 @@ File: images/incremental-set.png Graphic file (type png)
 <use images/incremental-set.png>
 Package pdftex.def Info: images/incremental-set.png  used on input line 87.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [3 <./images/incremental-set.png>]
-<images/affix.png, id=35, 462.528pt x 346.896pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+<images/affix.png, id=28, 462.528pt x 346.896pt>
 File: images/affix.png Graphic file (type png)
 <use images/affix.png>
-Package pdftex.def Info: images/affix.png  used on input line 100.
-(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
- [4 <./images/affix.png>] (./document.aux
+Package pdftex.def Info: images/affix.png  used on input line 129.
+(pdftex.def)             Requested size: 254.39117pt x 190.79338pt.
+<images/tnt-suffix.png, id=29, 722.7pt x 361.35pt>
+File: images/tnt-suffix.png Graphic file (type png)
+<use images/tnt-suffix.png>
+Package pdftex.def Info: images/tnt-suffix.png  used on input line 139.
+(pdftex.def)             Requested size: 433.62334pt x 216.81168pt.
+
+Overfull \hbox (15.36966pt too wide) in paragraph at lines 139--140
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--146
+
+ []
+
+[3 <./images/incremental-set.png>] [4 <./images/affix.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
+
+ []
+
+[5 <./images/tnt-suffix.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 234--235
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 236--237
+
+ []
+
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 267--269
+
+ []
+
+[9] (./document.aux
 LaTeX Info: Redefining \. on input line 8.
 LaTeX Info: Redefining \% on input line 8.
-) ) 
+)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 16902 strings out of 478023
- 329601 string characters out of 5820212
- 617425 words of memory out of 5000000
- 35077 multiletter control sequences out of 15000+600000
- 477088 words of font info for 60 fonts, out of 8000000 for 9000
+ 16923 strings out of 478023
+ 329956 string characters out of 5820212
+ 625498 words of memory out of 5000000
+ 35096 multiletter control sequences out of 15000+600000
+ 477256 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,89p,620b,363s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></op
-t/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/texli
-ve/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2022
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2022/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2022/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2022/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr17.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-8.pfb>
-Output written on document.pdf (5 pages, 187072 bytes).
+ 84i,11n,89p,1722b,363s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></opt
+/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/texliv
+e/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></opt/texlive/2022/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/texlive/2022/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/texlive/2022/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr12.pfb></opt/texlive/2022/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr17.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr8.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
+.pfb></opt/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on document.pdf (10 pages, 237064 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
